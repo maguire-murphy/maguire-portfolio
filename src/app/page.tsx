@@ -21,9 +21,8 @@ function FadeIn({
 
   return (
     <div
-      className={`transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      } ${className}`}
+      className={`transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        } ${className}`}
     >
       {children}
     </div>
@@ -275,77 +274,184 @@ export default function Home() {
                   02
                 </span>
                 <h2 className="font-[family-name:var(--font-heading)] text-2xl font-semibold">
-                  Project
+                  Projects
                 </h2>
                 <div className="flex-1 h-px bg-gradient-to-r from-[var(--surface)] to-transparent" />
               </div>
 
-              <div className="group relative">
-                <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-[var(--accent)]/30 via-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
-                <div className="relative rounded-2xl border border-[var(--surface)] bg-[var(--background)]/80 backdrop-blur-sm overflow-hidden hover:border-[var(--accent)]/20 transition-colors">
-                  {/* Project header */}
-                  <div className="p-6 pb-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <h3 className="font-[family-name:var(--font-heading)] text-2xl font-semibold">
-                        Beacon
-                      </h3>
-                      <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
-                        Live
-                      </span>
-                    </div>
-
-                    <p className="text-[var(--muted)] mb-5 leading-relaxed">
-                      A revenue analytics platform demonstrating Stripe and
-                      HubSpot API integration. Tracks MRR, ARR, churn,
-                      retention, and pipeline metrics for B2B SaaS companies.
-                      Gives teams unified visibility without the spreadsheet
-                      gymnastics.
-                    </p>
-
-                    {/* Tech stack */}
-                    <div className="flex flex-wrap gap-2">
-                      {[
-                        "Stripe API",
-                        "HubSpot API",
-                        "Next.js",
-                        "TypeScript",
-                        "Revenue Analytics",
-                      ].map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs px-3 py-1.5 rounded-full bg-[var(--surface)] text-[var(--muted)] border border-[var(--surface)] hover:border-[var(--muted)]/20 transition-colors"
-                        >
-                          {tech}
+              <div className="grid gap-4">
+                <div className="group relative">
+                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-[var(--accent)]/30 via-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
+                  <div className="relative rounded-2xl border border-[var(--surface)] bg-[var(--background)]/80 backdrop-blur-sm overflow-hidden hover:border-[var(--accent)]/20 transition-colors">
+                    {/* Project header */}
+                    <div className="p-6 pb-4">
+                      <div className="flex items-center gap-3 mb-3">
+                        <h3 className="font-[family-name:var(--font-heading)] text-2xl font-semibold">
+                          Beacon
+                        </h3>
+                        <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+                          Live
                         </span>
-                      ))}
-                    </div>
-                  </div>
+                      </div>
 
-                  {/* Screenshot */}
-                  <a
-                    href="https://beaconproject.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <div className="relative mx-6 mb-6 rounded-xl overflow-hidden border border-[var(--surface)] group-hover:border-[var(--muted)]/20 transition-colors">
-                      <Image
-                        src="/beacon.png"
-                        alt="Beacon dashboard showing MRR, churn rate, and customer metrics"
-                        width={1200}
-                        height={675}
-                        className="w-full transition-transform duration-500 group-hover:scale-[1.02]"
-                        priority
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="text-sm font-medium">
-                          View live demo
-                        </span>
-                        <ArrowIcon className="text-[var(--accent)]" />
+                      <p className="text-[var(--muted)] mb-5 leading-relaxed">
+                        A revenue analytics platform demonstrating Stripe and
+                        HubSpot API integration. Tracks MRR, ARR, churn,
+                        retention, and pipeline metrics for B2B SaaS companies.
+                        Gives teams unified visibility without the spreadsheet
+                        gymnastics.
+                      </p>
+
+                      {/* Tech stack */}
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "Stripe API",
+                          "HubSpot API",
+                          "Next.js",
+                          "TypeScript",
+                          "Revenue Analytics",
+                        ].map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-xs px-3 py-1.5 rounded-full bg-[var(--surface)] text-[var(--muted)] border border-[var(--surface)] hover:border-[var(--muted)]/20 transition-colors"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  </a>
+
+                    {/* Screenshot */}
+                    <a
+                      href="https://beaconproject.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <div className="relative mx-6 mb-6 rounded-xl overflow-hidden border border-[var(--surface)] group-hover:border-[var(--muted)]/20 transition-colors">
+                        <Image
+                          src="/beacon.png"
+                          alt="Beacon dashboard showing MRR, churn rate, and customer metrics"
+                          width={1200}
+                          height={675}
+                          className="w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                          priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span className="text-sm font-medium">
+                            View live demo
+                          </span>
+                          <ArrowIcon className="text-[var(--accent)]" />
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Pre-Deploy Checklist */}
+                <div className="group relative">
+                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-[var(--accent)]/30 via-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
+                  <div className="relative rounded-2xl border border-[var(--surface)] bg-[var(--background)]/80 backdrop-blur-sm overflow-hidden hover:border-[var(--accent)]/20 transition-colors">
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <h3 className="font-[family-name:var(--font-heading)] text-2xl font-semibold">
+                          Pre-Deploy Checklist
+                        </h3>
+                        <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+                          Live
+                        </span>
+                      </div>
+
+                      <p className="text-[var(--muted)] mb-5 leading-relaxed">
+                        A Claude Code plugin that runs 12 parallel subagent audits
+                        on Supabase + Vercel + Next.js apps before deployment.
+                        Checks security, RLS policies, rate limiting, input
+                        validation, error handling, and more. It also generates
+                        auto-fixes and a SHIP IT / DO NOT SHIP verdict.
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {[
+                          "Claude Code",
+                          "Subagents",
+                          "Supabase MCP",
+                          "Vercel CLI",
+                          "Next.js",
+                        ].map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-xs px-3 py-1.5 rounded-full bg-[var(--surface)] text-[var(--muted)] border border-[var(--surface)] hover:border-[var(--muted)]/20 transition-colors"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <a
+                        href="https://github.com/maguire-murphy/pre-deploy-checklist"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:underline"
+                      >
+                        View on GitHub
+                        <ArrowIcon className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Grab a Date */}
+                <div className="group relative">
+                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-[var(--accent)]/30 via-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
+                  <div className="relative rounded-2xl border border-[var(--surface)] bg-[var(--background)]/80 backdrop-blur-sm overflow-hidden hover:border-[var(--accent)]/20 transition-colors">
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <h3 className="font-[family-name:var(--font-heading)] text-2xl font-semibold">
+                          Grab a Date
+                        </h3>
+                        <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-[var(--foreground)]/10 text-[var(--foreground)]/70 border border-[var(--foreground)]/20">
+                          Beta
+                        </span>
+                      </div>
+
+                      <p className="text-[var(--muted)] mb-5 leading-relaxed">
+                        Built an activity-first dating app where matches swipe on date
+                        ideas together. Chat unlocks only after both people confirm
+                        the plan, skipping the small-talk spiral and getting
+                        straight to real dates.
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {[
+                          "React Native",
+                          "Expo",
+                          "Supabase",
+                          "PostGIS",
+                          "Stripe",
+                          "Cloudflare R2",
+                          "Next.js",
+                        ].map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-xs px-3 py-1.5 rounded-full bg-[var(--surface)] text-[var(--muted)] border border-[var(--surface)] hover:border-[var(--muted)]/20 transition-colors"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <a
+                        href="https://www.grabadate.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:underline"
+                      >
+                        Visit site
+                        <ArrowIcon className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
